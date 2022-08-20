@@ -18,7 +18,8 @@ public class NPV {
 
     public double calculateNpv(){
         for (int i=0; i< nums.size(); i++){
-            npv=+ nums.get(i)/Math.pow(1+interest, i);
+            npv=+ nums.get(i)/Math.pow((1+interest), i);
+            System.out.println(npv);
             
 
         }   
@@ -27,12 +28,13 @@ public class NPV {
     }
     
     public static void main(String[] args) {
-        List<Integer> homo =new ArrayList<Integer>();
-        homo.add(150);
-        homo.add(100);
-        homo.add(300);
+        List<Integer> li =new ArrayList<Integer>();
+        li.add(-100);
+        li.add(-100);
+        li.add(250);
+        double inter=0.1;
 
-        NPV o = new NPV(0.12, homo);
+        NPV o = new NPV(inter, li);
         System.out.println(o.calculateNpv());
         
 
